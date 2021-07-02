@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul  2 10:25:45 2021
+Created on Fri Jul  2 14:25:03 2021
 
 @author: amandaseger
 """
-"Task 3"
+"Task 4"
 import numpy as np
 import matplotlib.pyplot as plt
 from Pricing.Environment.PricingEnv import *
@@ -43,40 +43,36 @@ def main():
     ts_learner = TS_Learner(n_arms = n_arms)
     ucb_learner = UCB1(n_arms = n_arms)
     
-    ts_reward= []
-    ucb_reward= []
+    ts_daily_reward= []
+    ucb_daily_reward= []
     
     ucb_reward_per_experiment = []
     for t in range(0,T):
-
+        ts_daily_profits = 0
+        ucb_daily_profits = 0
         #Revenue function
+        for c in range(0,3): #Classes
         #Thompson Sampling Learner
-        ts_pulled_arm = ts_learner.pull_arm()
-        ts_reward = price_env(ts_pulled_arm)
-        ts_learner.update(ts_pulled_arm, ts_reward)
+            ts_pulled_arm = ts_learner.pull_arm()
+            ts_reward = price_env(ts_pulled_arm)
+            ts_learner.update(ts_pulled_arm, ts_reward)
             
-        #Revenue function
-        ts_profit = (t*conv_rate[ts_pulled_arm]*price-costPerClick)*n
+            #Revenue function
+            ts_class_profit = (t*conv_rate[ts_pulled_arm]*price-costPerClick)*n
             
-        #UCB1 Learner
-        ucb_pulled_arm = ucb_learner.pull_arm()
-        ucb_reward = price_env(ucb_pulled_arm)
-        ucb_learner.update(ucb_pulled_arm, ucb_reward)
+            #UCB1 Learner
+            ucb_pulled_arm = ucb_learner.pull_arm()
+            ucb_reward = price_env(ucb_pulled_arm)
+            ucb_learner.update(ucb_pulled_arm, ucb_reward)
             
-        #Revenue function
-        ucb_profit = (t*conv_rate[ucb_pulled_arm]*price-costPerClick)*n
+            #Revenue function
+            ucb_class_profit = (t*conv_rate[ucb_pulled_arm]*price-costPerClick)*n
             
+            ts_daily_profits += ts_class_profit
+            ucb_daily_profits += usb_class_profit
             
-        ts_reward.append(ts_profits)
-        ucb_reward.append(ucb_profits)
+        ts_daily_reward.append(ts_daily_profits)
+        ucb_daily_reward.append(ucb_daily_profits)
         
     #ts_reward_per_experiment.append(ts_)
     #ucb_reward_per_experiment.append(ucb_reward_per_experiment)
-    
-    
-
-            
-
-    
-
-    
