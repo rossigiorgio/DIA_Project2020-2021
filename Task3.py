@@ -67,8 +67,8 @@ def main():
         ucb_profit = (t*conv_rate[ucb_pulled_arm]*price-costPerClick)*n
             
             
-        ts_reward.append(ts_profits)
-        ucb_reward.append(ucb_profits)
+    ts_reward.append(ts_profits)
+    ucb_reward.append(ucb_profits)
         
     #ts_reward_per_experiment.append(ts_)
     #ucb_reward_per_experiment.append(ucb_reward_per_experiment)
