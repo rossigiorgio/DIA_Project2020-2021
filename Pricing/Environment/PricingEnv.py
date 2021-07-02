@@ -8,7 +8,7 @@ This is a temporary script file.
 import json
 import numpy as np
 
-class PricingEnv:
+class PricingEnv():
     
     def __init__(self):
         with open('/pricing_config.json') as json_file:
