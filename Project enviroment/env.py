@@ -7,6 +7,7 @@ This is a temporary script file.
 
 import json
 import numpy as np
+import math
 
 class PricingEnv:
     
@@ -22,8 +23,10 @@ class PricingEnv:
     def nextTimeProbability(month):
         return(month/(2+month))
     
-   
-        
+    def nrDailyClick(bid):
+        meanNrClick = math.trunc(500*math.tanh(bid))
+        nrClick= math.trunc(np.random.uniform(meanNrClick-0.05*meanNrClick, meanNrClick+0.05*meanNrClick,1))
+        return nrClick
     
     def costPerClick(bid):
         s= np.random.uniform(bid-0.05*bid, bid+0.05*bid,1)
