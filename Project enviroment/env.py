@@ -20,7 +20,10 @@ class PricingEnv:
         self.probabilities=data["product"][0]["probabilities"]
         
     def nextTimeProbability(month):
-        return(month/(1+month))
+        return(month/(2+month))
+    
+   
+        
     
     def costPerClick(bid):
         s= np.random.uniform(bid-0.05*bid, bid+0.05*bid,1)
