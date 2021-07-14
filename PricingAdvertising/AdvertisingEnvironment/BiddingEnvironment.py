@@ -7,7 +7,7 @@ Created on Mon Jul 12 19:58:05 2021
 """
 #time horizon: 60 days
 #Fixed daily budget
-# 20 possible bids
+# 10 possible bids
 #since we have fixed daily budget, the optimal bid is not necessary the one the higher value 
 
 import numpy as np

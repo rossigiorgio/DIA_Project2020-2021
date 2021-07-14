@@ -5,8 +5,8 @@ Created on Mon Jul 12 20:00:11 2021
 
 @author: amandaseger
 """
-from BiddingEnvironment import *
-from Learner import *
+from AdvertisingEnvironment.BiddingEnvironment import *
+from AdvertisingEnvironment.Learner import *
 
 class GTS_Learner(Learner):
     def __init__(self, n_arms):

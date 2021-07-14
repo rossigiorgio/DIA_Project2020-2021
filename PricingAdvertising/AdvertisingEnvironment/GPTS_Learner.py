@@ -5,8 +5,8 @@ Created on Mon Jul 12 20:04:17 2021
 
 @author: amandaseger
 """
-from BiddingEnvironment import *
-from Learner import *
+from AdvertisingEnvironment.BiddingEnvironment import *
+from AdvertisingEnvironment.Learner import *
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, ConstantKernel as C
 

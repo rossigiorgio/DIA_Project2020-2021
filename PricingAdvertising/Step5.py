@@ -7,8 +7,9 @@ Created on Mon Jul 12 20:05:34 2021
 """
 import numpy as np
 import matplotlib.pyplot as plt
-from AdvertisingEvironment.GTS_Learner import *
-from AdvertisingEvironment.GPTS_Learner import *
+from AdvertisingEnvironment.GTS_Learner import *
+from AdvertisingEnvironment.GPTS_Learner import *
+from AdvertisingEnvironment.BiddingEnvironment import *
 
 n_arms = 10
 min_bid = 0.0
